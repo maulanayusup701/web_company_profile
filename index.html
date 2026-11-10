@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PixelCraft — Jasa Web Design & UI/UX</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#eef4ff',
+                            100: '#dbe7ff',
+                            200: '#bfd3ff',
+                            300: '#93b4ff',
+                            400: '#608bff',
+                            500: '#3b64ff',
+                            600: '#2442f5',
+                            700: '#1c31d8',
+                            800: '#1b2cae',
+                            900: '#1c2c89',
+                        },
+                        ink: '#0f172a',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+                    },
+                },
+            },
+        };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+</head>
+
+<body class="bg-white text-ink font-sans antialiased selection:bg-brand-200 selection:text-brand-900">
+
+    <!-- ================= NAVBAR ================= -->
+    <header class="sticky top-0 z-50 border-b border-slate-100 bg-white/80 backdrop-blur-md">
+        <nav class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-2">
+                <span
+                    class="grid h-9 w-9 place-items-center rounded-xl bg-brand-600 text-white shadow-lg shadow-brand-600/30">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z" />
+                        <path d="M12 12l8-4.5" />
+                        <path d="M12 12v9" />
+                        <path d="M12 12L4 7.5" />
+                    </svg>
+                </span>
+                <span class="text-lg font-bold tracking-tight">PixelCraft</span>
+            </a>
+
+            <!-- Desktop Menu -->
+            <ul class="hidden items-center gap-8 text-sm font-medium text-slate-600 md:flex">
+                <li><a href="#layanan" class="transition hover:text-brand-600">Layanan</a></li>
+                <li><a href="#proses" class="transition hover:text-brand-600">Proses</a></li>
+                <li><a href="#portofolio" class="transition hover:text-brand-600">Portofolio</a></li>
+                <li><a href="#harga" class="transition hover:text-brand-600">Harga</a></li>
+            </ul>
+
+            <!-- CTA Desktop -->
+            <a href="#kontak"
+                class="hidden rounded-xl bg-brand-600 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-brand-600/25 transition hover:bg-brand-700 md:inline-block">
+                Konsultasi Gratis
+            </a>
+
+            <!-- Mobile Toggle -->
+            <button id="menuBtn"
+                class="grid h-10 w-10 place-items-center rounded-lg border border-slate-200 text-slate-700 md:hidden"
+                aria-label="Buka menu" aria-expanded="false">
+                <svg id="iconOpen" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 12h16M4 17h16" />
+                </svg>
+                <svg id="iconClose" xmlns="http://www.w3.org/2000/svg" class="hidden h-5 w-5" fill="none"
+                    viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden border-t border-slate-100 bg-white px-4 pb-6 pt-2 md:hidden">
+            <ul class="flex flex-col gap-1 text-sm font-medium text-slate-700">
+                <li><a href="#layanan" class="block rounded-lg px-3 py-3 transition hover:bg-slate-50">Layanan</a></li>
+                <li><a href="#proses" class="block rounded-lg px-3 py-3 transition hover:bg-slate-50">Proses</a></li>
+                <li><a href="#portofolio" class="block rounded-lg px-3 py-3 transition hover:bg-slate-50">Portofolio</a>
+                </li>
+                <li><a href="#harga" class="block rounded-lg px-3 py-3 transition hover:bg-slate-50">Harga</a></li>
+            </ul>
+            <a href="#kontak"
+                class="mt-3 block rounded-xl bg-brand-600 px-5 py-3 text-center text-sm font-semibold text-white transition hover:bg-brand-700">
+                Konsultasi Gratis
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <!-- ================= HERO ================= -->
+        <section class="relative overflow-hidden">
+            <!-- dekorasi -->
+            <div class="pointer-events-none absolute -top-32 -right-32 h-96 w-96 rounded-full bg-brand-100 blur-3xl">
+            </div>
+            <div class="pointer-events-none absolute -bottom-40 -left-32 h-96 w-96 rounded-full bg-indigo-100 blur-3xl">
+            </div>
+
+            <div
+                class="relative mx-auto grid max-w-7xl items-center gap-12 px-4 py-16 sm:px-6 sm:py-20 lg:grid-cols-2 lg:gap-16 lg:px-8 lg:py-28">
+                <!-- Copy -->
+                <div class="text-center lg:text-left">
+                    <span
+                        class="inline-flex items-center gap-2 rounded-full border border-brand-200 bg-brand-50 px-3 py-1 text-xs font-semibold text-brand-700">
+                        <span class="h-1.5 w-1.5 rounded-full bg-brand-500"></span>
+                        Available for new projects
+                    </span>
+
+                    <h1 class="mt-5 text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
+                        Desain Website yang <span
+                            class="bg-gradient-to-r from-brand-600 to-indigo-500 bg-clip-text text-transparent">Memukau</span>
+                        &amp; Menghasilkan
+                    </h1>
+
+                    <p class="mx-auto mt-5 max-w-xl text-base leading-relaxed text-slate-600 sm:text-lg lg:mx-0">
+                        Kami merancang pengalaman UI/UX yang bersih, intuitif, dan berorientasi konversi — dari riset
+                        pengguna hingga website siap rilis.
+                    </p>
+
+                    <div class="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center lg:justify-start">
+                        <a href="#kontak"
+                            class="w-full rounded-xl bg-brand-600 px-6 py-3.5 text-center text-sm font-semibold text-white shadow-xl shadow-brand-600/30 transition hover:-translate-y-0.5 hover:bg-brand-700 sm:w-auto">
+                            Mulai Proyek Anda
+                        </a>
+                        <a href="#portofolio"
+                            class="w-full rounded-xl border border-slate-200 bg-white px-6 py-3.5 text-center text-sm font-semibold text-slate-700 transition hover:border-slate-300 hover:bg-slate-50 sm:w-auto">
+                            Lihat Portofolio
+                        </a>
+                    </div>
+
+                    <!-- Trust -->
+                    <div class="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center lg:justify-start">
+                        <div class="flex -space-x-3">
+                            <img class="h-10 w-10 rounded-full border-2 border-white object-cover"
+                                src="https://i.pravatar.cc/80?img=12" alt="Klien 1" />
+                            <img class="h-10 w-10 rounded-full border-2 border-white object-cover"
+                                src="https://i.pravatar.cc/80?img=32" alt="Klien 2" />
+                            <img class="h-10 w-10 rounded-full border-2 border-white object-cover"
+                                src="https://i.pravatar.cc/80?img=45" alt="Klien 3" />
+                            <img class="h-10 w-10 rounded-full border-2 border-white object-cover"
+                                src="https://i.pravatar.cc/80?img=5" alt="Klien 4" />
+                        </div>
+                        <p class="text-sm text-slate-600">
+                            <span class="font-bold text-ink">120+</span> klien puas · <span
+                                class="font-semibold text-amber-500">★ 4.9/5</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Visual Mockup -->
+                <div class="relative mx-auto w-full max-w-md lg:max-w-none">
+                    <div
+                        class="absolute inset-0 -rotate-3 rounded-3xl bg-gradient-to-tr from-brand-500 to-indigo-400 opacity-20 blur-2xl">
+                    </div>
+                    <div
+                        class="relative rounded-3xl border border-slate-200 bg-white p-3 shadow-2xl shadow-slate-900/10">
+                        <!-- browser bar -->
+                        <div class="flex items-center gap-1.5 px-3 pb-3 pt-1">
+                            <span class="h-2.5 w-2.5 rounded-full bg-red-400"></span>
+                            <span class="h-2.5 w-2.5 rounded-full bg-amber-400"></span>
+                            <span class="h-2.5 w-2.5 rounded-full bg-emerald-400"></span>
+                            <span class="ml-3 h-5 flex-1 rounded-md bg-slate-100"></span>
+                        </div>
+                        <!-- konten mockup -->
+                        <div class="space-y-3 rounded-2xl bg-slate-50 p-4">
+                            <div class="h-24 rounded-xl bg-gradient-to-r from-brand-500 to-indigo-400"></div>
+                            <div class="grid grid-cols-3 gap-3">
+                                <div class="h-16 rounded-lg bg-white shadow-sm"></div>
+                                <div class="h-16 rounded-lg bg-white shadow-sm"></div>
+                                <div class="h-16 rounded-lg bg-white shadow-sm"></div>
+                            </div>
+                            <div class="space-y-2">
+                                <div class="h-3 w-3/4 rounded-full bg-slate-200"></div>
+                                <div class="h-3 w-1/2 rounded-full bg-slate-200"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= LOGO STRIP ================= -->
+        <section class="border-y border-slate-100 bg-slate-50/60">
+            <div class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+                <p class="text-center text-xs font-semibold uppercase tracking-widest text-slate-400">Dipercaya oleh tim
+                    hebat</p>
+                <div
+                    class="mt-6 grid grid-cols-2 items-center gap-6 text-center text-lg font-bold text-slate-400 sm:grid-cols-3 md:grid-cols-5">
+                    <span class="transition hover:text-slate-600">Nusantara</span>
+                    <span class="transition hover:text-slate-600">KopiKita</span>
+                    <span class="transition hover:text-slate-600">FinGo</span>
+                    <span class="transition hover:text-slate-600">Warung.id</span>
+                    <span class="transition hover:text-slate-600">EduPintar</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= LAYANAN ================= -->
+        <section id="layanan" class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-24">
+            <div class="mx-auto max-w-2xl text-center">
+                <p class="text-sm font-semibold uppercase tracking-widest text-brand-600">Layanan Kami</p>
+                <h2 class="mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl">Solusi desain end-to-end</h2>
+                <p class="mt-4 text-slate-600">Dari riset hingga handoff developer — semua yang Anda butuhkan untuk
+                    produk digital yang sukses.</p>
+            </div>
+
+            <div class="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                <!-- Card 1 -->
+                <article
+                    class="group rounded-2xl border border-slate-200 bg-white p-7 transition hover:-translate-y-1 hover:border-brand-200 hover:shadow-xl hover:shadow-brand-600/5">
+                    <span
+                        class="grid h-12 w-12 place-items-center rounded-xl bg-brand-50 text-brand-600 transition group-hover:bg-brand-600 group-hover:text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M2 12h20M12 2v20" />
+                            <circle cx="12" cy="12" r="9" />
+                        </svg>
+                    </span>
+                    <h3 class="mt-5 text-lg font-bold">UI/UX Design</h3>
+                    <p class="mt-2 text-sm leading-relaxed text-slate-600">Wireframe, prototipe interaktif, dan design
+                        system yang konsisten untuk pengalaman pengguna yang mulus.</p>
+                </article>
+
+                <!-- Card 2 -->
+                <article
+                    class="group rounded-2xl border border-slate-200 bg-white p-7 transition hover:-translate-y-1 hover:border-brand-200 hover:shadow-xl hover:shadow-brand-600/5">
+                    <span
+                        class="grid h-12 w-12 place-items-center rounded-xl bg-brand-50 text-brand-600 transition group-hover:bg-brand-600 group-hover:text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="3" width="18" height="18" rx="2" />
+                            <path d="M3 9h18M9 21V9" />
+                        </svg>
+                    </span>
+                    <h3 class="mt-5 text-lg font-bold">Web Design</h3>
+                    <p class="mt-2 text-sm leading-relaxed text-slate-600">Landing page, company profile, dan e-commerce
+                        yang cepat, modern, serta SEO-friendly.</p>
+                </article>
+
+                <!-- Card 3 -->
+                <article
+                    class="group rounded-2xl border border-slate-200 bg-white p-7 transition hover:-translate-y-1 hover:border-brand-200 hover:shadow-xl hover:shadow-brand-600/5">
+                    <span
+                        class="grid h-12 w-12 place-items-center rounded-xl bg-brand-50 text-brand-600 transition group-hover:bg-brand-600 group-hover:text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 20V10M18 20V4M6 20v-4" />
+                        </svg>
+                    </span>
+                    <h3 class="mt-5 text-lg font-bold">Research &amp; Testing</h3>
+                    <p class="mt-2 text-sm leading-relaxed text-slate-600">Riset pengguna, usability testing, dan
+                        analisis data untuk keputusan desain yang tepat sasaran.</p>
+                </article>
+
+                <!-- Card 4 -->
+                <article
+                    class="group rounded-2xl border border-slate-200 bg-white p-7 transition hover:-translate-y-1 hover:border-brand-200 hover:shadow-xl hover:shadow-brand-600/5">
+                    <span
+                        class="grid h-12 w-12 place-items-center rounded-xl bg-brand-50 text-brand-600 transition group-hover:bg-brand-600 group-hover:text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2l3 7h7l-5.5 4.5L18.5 21 12 16.5 5.5 21l2-7.5L2 9h7l3-7z" />
+                        </svg>
+                    </span>
+                    <h3 class="mt-5 text-lg font-bold">Branding &amp; Logo</h3>
+                    <p class="mt-2 text-sm leading-relaxed text-slate-600">Identitas visual yang kuat — logo, palet
+                        warna, tipografi, dan brand guideline lengkap.</p>
+                </article>
+
+                <!-- Card 5 -->
+                <article
+                    class="group rounded-2xl border border-slate-200 bg-white p-7 transition hover:-translate-y-1 hover:border-brand-200 hover:shadow-xl hover:shadow-brand-600/5">
+                    <span
+                        class="grid h-12 w-12 place-items-center rounded-xl bg-brand-50 text-brand-600 transition group-hover:bg-brand-600 group-hover:text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 18l6-6-6-6M8 6l-6 6 6 6" />
+                        </svg>
+                    </span>
+                    <h3 class="mt-5 text-lg font-bold">Development</h3>
+                    <p class="mt-2 text-sm leading-relaxed text-slate-600">Implementasi desain menjadi website responsif
+                        dengan performa tinggi dan kode bersih.</p>
+                </article>
+
+                <!-- Card 6 -->
+                <article
+                    class="group rounded-2xl border border-slate-200 bg-white p-7 transition hover:-translate-y-1 hover:border-brand-200 hover:shadow-xl hover:shadow-brand-600/5">
+                    <span
+                        class="grid h-12 w-12 place-items-center rounded-xl bg-brand-50 text-brand-600 transition group-hover:bg-brand-600 group-hover:text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2l2.4 7.4H22l-6 4.4 2.3 7.2-6.3-4.6L5.7 21 8 13.8 2 9.4h7.6L12 2z" />
+                        </svg>
+                    </span>
+                    <h3 class="mt-5 text-lg font-bold">Maintenance</h3>
+                    <p class="mt-2 text-sm leading-relaxed text-slate-600">Pemeliharaan rutin, update konten, dan
+                        optimasi performa agar website selalu prima.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- ================= PROSES ================= -->
+        <section id="proses" class="bg-slate-50/60">
+            <div class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-24">
+                <div class="mx-auto max-w-2xl text-center">
+                    <p class="text-sm font-semibold uppercase tracking-widest text-brand-600">Proses Kerja</p>
+                    <h2 class="mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl">4 langkah menuju website impian
+                    </h2>
+                    <p class="mt-4 text-slate-600">Transparan, terukur, dan kolaboratif di setiap tahap.</p>
+                </div>
+
+                <div class="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                    <!-- Step -->
+                    <div class="relative rounded-2xl border border-slate-200 bg-white p-6">
+                        <span class="text-5xl font-extrabold text-brand-100">01</span>
+                        <h3 class="mt-2 text-lg font-bold">Discovery</h3>
+                        <p class="mt-2 text-sm leading-relaxed text-slate-600">Diskusi mendalam tentang tujuan bisnis,
+                            target pengguna, dan kebutuhan proyek.</p>
+                    </div>
+                    <div class="relative rounded-2xl border border-slate-200 bg-white p-6">
+                        <span class="text-5xl font-extrabold text-brand-100">02</span>
+                        <h3 class="mt-2 text-lg font-bold">Design</h3>
+                        <p class="mt-2 text-sm leading-relaxed text-slate-600">Wireframe, moodboard, lalu desain UI
+                            high-fidelity yang siap direview.</p>
+                    </div>
+                    <div class="relative rounded-2xl border border-slate-200 bg-white p-6">
+                        <span class="text-5xl font-extrabold text-brand-100">03</span>
+                        <h3 class="mt-2 text-lg font-bold">Build</h3>
+                        <p class="mt-2 text-sm leading-relaxed text-slate-600">Development responsif dengan kode bersih
+                            dan performa yang dioptimalkan.</p>
+                    </div>
+                    <div class="relative rounded-2xl border border-slate-200 bg-white p-6">
+                        <span class="text-5xl font-extrabold text-brand-100">04</span>
+                        <h3 class="mt-2 text-lg font-bold">Launch</h3>
+                        <p class="mt-2 text-sm leading-relaxed text-slate-600">Testing menyeluruh, peluncuran, dan
+                            dukungan pasca-rilis untuk Anda.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= PORTOFOLIO ================= -->
+        <section id="portofolio" class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-24">
+            <div class="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
+                <div>
+                    <p class="text-sm font-semibold uppercase tracking-widest text-brand-600">Portofolio</p>
+                    <h2 class="mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl">Karya terbaru kami</h2>
+                </div>
+                <a href="#kontak" class="text-sm font-semibold text-brand-600 transition hover:text-brand-700">Lihat
+                    semua →</a>
+            </div>
+
+            <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                <!-- Item -->
+                <a href="#"
+                    class="group overflow-hidden rounded-2xl border border-slate-200 bg-white transition hover:shadow-xl">
+                    <div class="relative aspect-[4/3] overflow-hidden bg-gradient-to-br from-brand-400 to-indigo-500">
+                        <div
+                            class="absolute inset-0 grid place-items-center text-white/90 transition group-hover:scale-105">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" stroke-width="1.2">
+                                <rect x="3" y="4" width="18" height="14" rx="2" />
+                                <path d="M3 9h18M8 21h8" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <p class="text-xs font-semibold uppercase tracking-wider text-brand-600">E-Commerce</p>
+                        <h3 class="mt-1 text-lg font-bold">KopiKita Online Store</h3>
+                        <p class="mt-1 text-sm text-slate-600">Redesign toko online dengan peningkatan konversi 38%.</p>
+                    </div>
+                </a>
+
+                <a href="#"
+                    class="group overflow-hidden rounded-2xl border border-slate-200 bg-white transition hover:shadow-xl">
+                    <div class="relative aspect-[4/3] overflow-hidden bg-gradient-to-br from-emerald-400 to-teal-500">
+                        <div
+                            class="absolute inset-0 grid place-items-center text-white/90 transition group-hover:scale-105">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" stroke-width="1.2">
+                                <path d="M12 2v20M2 12h20" />
+                                <circle cx="12" cy="12" r="9" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <p class="text-xs font-semibold uppercase tracking-wider text-brand-600">Fintech</p>
+                        <h3 class="mt-1 text-lg font-bold">FinGo Mobile App</h3>
+                        <p class="mt-1 text-sm text-slate-600">UI/UX aplikasi keuangan dengan onboarding yang intuitif.
+                        </p>
+                    </div>
+                </a>
+
+                <a href="#"
+                    class="group overflow-hidden rounded-2xl border border-slate-200 bg-white transition hover:shadow-xl">
+                    <div class="relative aspect-[4/3] overflow-hidden bg-gradient-to-br from-amber-400 to-orange-500">
+                        <div
+                            class="absolute inset-0 grid place-items-center text-white/90 transition group-hover:scale-105">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" stroke-width="1.2">
+                                <path d="M4 6h16M4 12h16M4 18h10" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <p class="text-xs font-semibold uppercase tracking-wider text-brand-600">Education</p>
+                        <h3 class="mt-1 text-lg font-bold">EduPintar Platform</h3>
+                        <p class="mt-1 text-sm text-slate-600">Learning management system dengan pengalaman belajar
+                            modern.</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- ================= HARGA ================= -->
+        <section id="harga" class="bg-slate-50/60">
+            <div class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-24">
+                <div class="mx-auto max-w-2xl text-center">
+                    <p class="text-sm font-semibold uppercase tracking-widest text-brand-600">Harga</p>
+                    <h2 class="mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl">Paket sesuai kebutuhan</h2>
+                    <p class="mt-4 text-slate-600">Harga transparan, tanpa biaya tersembunyi. Konsultasi gratis untuk
+                        memilih paket terbaik.</p>
+                </div>
+
+                <div class="mt-14 grid gap-6 lg:grid-cols-3">
+                    <!-- Paket 1 -->
+                    <div class="rounded-2xl border border-slate-200 bg-white p-8">
+                        <h3 class="text-lg font-bold">Starter</h3>
+                        <p class="mt-1 text-sm text-slate-600">Cocok untuk personal &amp; UMKM</p>
+                        <p class="mt-6 flex items-baseline gap-1">
+                            <span class="text-4xl font-extrabold">Rp 2,5jt</span>
+                            <span class="text-sm text-slate-500">/proyek</span>
+                        </p>
+                        <ul class="mt-6 space-y-3 text-sm text-slate-600">
+                            <li class="flex items-start gap-2"><span class="mt-0.5 text-emerald-500">✓</span> Landing
+                                page 1 halaman</li>
+                            <li class="flex items-start gap-2"><span class="mt-0.5 text-emerald-500">✓</span> Desain
+                                responsif</li>
+                            <li class="flex items-start gap-2"><span class="mt-0.5 text-emerald-500">✓</span> 2x revisi
+                            </li>
+                            <li class="flex items-start gap-2"><span class="mt-0.5 text-emerald-500">✓</span> Pengerjaan
+                                7 hari</li>
+                        </ul>
+                        <a href="#kontak"
+                            class="mt-8 block rounded-xl border border-slate-200 px-5 py-3 text-center text-sm font-semibold text-slate-700 transition hover:bg-slate-50">Pilih
+                            Paket</a>
+                    </div>
+
+                    <!-- Paket 2 (populer) -->
+                    <div
+                        class="relative rounded-2xl border-2 border-brand-600 bg-white p-8 shadow-2xl shadow-brand-600/10 lg:-translate-y-2">
+                        <span
+                            class="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-brand-600 px-3 py-1 text-xs font-bold uppercase tracking-wider text-white">Paling
+                            Populer</span>
+                        <h3 class="text-lg font-bold">Business</h3>
+                        <p class="mt-1 text-sm text-slate-600">Untuk bisnis yang berkembang</p>
+                        <p class="mt-6 flex items-baseline gap-1">
+                            <span class="text-4xl font-extrabold">Rp 6jt</span>
+                            <span class="text-sm text-slate-500">/proyek</span>
+                        </p>
+                        <ul class="mt-6 space-y-3 text-sm text-slate-600">
+                            <li class="flex items-start gap-2"><span class="mt-0.5 text-emerald-500">✓</span> Website
+                                hingga 5 halaman</li>
+                            <li class="flex items-start gap-2"><span class="mt-0.5 text-emerald-500">✓</span> Custom
+                                UI/UX design</li>
+                            <li class="flex items-start gap-2"><span class="mt-0.5 text-emerald-500">✓</span> SEO dasar
+                                &amp; optimasi</li>
+                            <li class="flex items-start gap-2"><span class="mt-0.5 text-emerald-500">✓</span> 4x revisi
+                            </li>
+                            <li class="flex items-start gap-2"><span class="mt-0.5 text-emerald-500">✓</span> Pengerjaan
+                                14 hari</li>
+                        </ul>
+                        <a href="#kontak"
+                            class="mt-8 block rounded-xl bg-brand-600 px-5 py-3 text-center text-sm font-semibold text-white shadow-lg shadow-brand-600/25 transition hover:bg-brand-700">Pilih
+                            Paket</a>
+                    </div>
+
+                    <!-- Paket 3 -->
+                    <div class="rounded-2xl border border-slate-200 bg-white p-8">
+                        <h3 class="text-lg font-bold">Enterprise</h3>
+                        <p class="mt-1 text-sm text-slate-600">Solusi lengkap &amp; custom</p>
+                        <p class="mt-6 flex items-baseline gap-1">
+                            <span class="text-4xl font-extrabold">Hubungi</span>
+                            <span class="text-sm text-slate-500">/kami</span>
+                        </p>
+                        <ul class="mt-6 space-y-3 text-sm text-slate-600">
+                            <li class="flex items-start gap-2"><span class="mt-0.5 text-emerald-500">✓</span> Halaman
+                                tak terbatas</li>
+                            <li class="flex items-start gap-2"><span class="mt-0.5 text-emerald-500">✓</span> Design
+                                system &amp; branding</li>
+                            <li class="flex items-start gap-2"><span class="mt-0.5 text-emerald-500">✓</span> Integrasi
+                                API &amp; CMS</li>
+                            <li class="flex items-start gap-2"><span class="mt-0.5 text-emerald-500">✓</span> Revisi tak
+                                terbatas</li>
+                            <li class="flex items-start gap-2"><span class="mt-0.5 text-emerald-500">✓</span> Support
+                                prioritas</li>
+                        </ul>
+                        <a href="#kontak"
+                            class="mt-8 block rounded-xl border border-slate-200 px-5 py-3 text-center text-sm font-semibold text-slate-700 transition hover:bg-slate-50">Hubungi
+                            Kami</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= TESTIMONI ================= -->
+        <section class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-24">
+            <div class="mx-auto max-w-2xl text-center">
+                <p class="text-sm font-semibold uppercase tracking-widest text-brand-600">Testimoni</p>
+                <h2 class="mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl">Apa kata klien kami</h2>
+            </div>
+
+            <div class="mt-14 grid gap-6 md:grid-cols-3">
+                <figure class="rounded-2xl border border-slate-200 bg-white p-7">
+                    <div class="flex gap-1 text-amber-400">★★★★★</div>
+                    <blockquote class="mt-4 text-sm leading-relaxed text-slate-600">"Prosesnya rapi dan komunikatif.
+                        Website baru kami jauh lebih cepat dan konversi naik drastis."</blockquote>
+                    <figcaption class="mt-6 flex items-center gap-3">
+                        <img class="h-10 w-10 rounded-full object-cover" src="https://i.pravatar.cc/80?img=12"
+                            alt="Andi" />
+                        <div>
+                            <p class="text-sm font-bold">Andi Pratama</p>
+                            <p class="text-xs text-slate-500">CEO, KopiKita</p>
+                        </div>
+                    </figcaption>
+                </figure>
+
+                <figure class="rounded-2xl border border-slate-200 bg-white p-7">
+                    <div class="flex gap-1 text-amber-400">★★★★★</div>
+                    <blockquote class="mt-4 text-sm leading-relaxed text-slate-600">"Desain UI-nya bersih dan mudah
+                        dipakai. Tim developer kami sangat terbantu dengan handoff-nya."</blockquote>
+                    <figcaption class="mt-6 flex items-center gap-3">
+                        <img class="h-10 w-10 rounded-full object-cover" src="https://i.pravatar.cc/80?img=32"
+                            alt="Sari" />
+                        <div>
+                            <p class="text-sm font-bold">Sari Wijaya</p>
+                            <p class="text-xs text-slate-500">Product Lead, FinGo</p>
+                        </div>
+                    </figcaption>
+                </figure>
+
+                <figure class="rounded-2xl border border-slate-200 bg-white p-7">
+                    <div class="flex gap-1 text-amber-400">★★★★★</div>
+                    <blockquote class="mt-4 text-sm leading-relaxed text-slate-600">"Hasilnya melebihi ekspektasi.
+                        Website responsif, cepat, dan branding jadi lebih profesional."</blockquote>
+                    <figcaption class="mt-6 flex items-center gap-3">
+                        <img class="h-10 w-10 rounded-full object-cover" src="https://i.pravatar.cc/80?img=45"
+                            alt="Budi" />
+                        <div>
+                            <p class="text-sm font-bold">Budi Santoso</p>
+                            <p class="text-xs text-slate-500">Founder, Warung.id</p>
+                        </div>
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <!-- ================= CTA ================= -->
+        <section id="kontak" class="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8 lg:pb-24">
+            <div class="relative overflow-hidden rounded-3xl bg-ink px-6 py-16 text-center sm:px-12 lg:py-20">
+                <div
+                    class="pointer-events-none absolute -right-20 -top-20 h-72 w-72 rounded-full bg-brand-600/30 blur-3xl">
+                </div>
+                <div
+                    class="pointer-events-none absolute -bottom-24 -left-20 h-72 w-72 rounded-full bg-indigo-500/30 blur-3xl">
+                </div>
+
+                <div class="relative mx-auto max-w-2xl">
+                    <h2 class="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">Siap membangun website
+                        impian?</h2>
+                    <p class="mt-4 text-slate-300">Dapatkan konsultasi gratis dan penawaran dalam 24 jam. Tanpa
+                        komitmen.</p>
+
+                    <form class="mt-8 flex flex-col gap-3 sm:flex-row">
+                        <label for="email" class="sr-only">Email</label>
+                        <input id="email" type="email" required placeholder="Email Anda"
+                            class="w-full flex-1 rounded-xl border border-white/10 bg-white/5 px-5 py-3.5 text-sm text-white placeholder-slate-400 outline-none ring-brand-500/40 transition focus:ring-4" />
+                        <button type="submit"
+                            class="rounded-xl bg-brand-600 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-brand-600/30 transition hover:bg-brand-500">
+                            Konsultasi Gratis
+                        </button>
+                    </form>
+                    <p class="mt-4 text-xs text-slate-400">Atau hubungi kami di <a href="mailto:hello@pixelcraft.id"
+                            class="font-semibold text-white underline-offset-4 hover:underline">hello@pixelcraft.id</a>
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="border-t border-slate-100">
+        <div class="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-4 lg:px-8">
+            <div class="md:col-span-2">
+                <a href="#" class="flex items-center gap-2">
+                    <span class="grid h-9 w-9 place-items-center rounded-xl bg-brand-600 text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z" />
+                            <path d="M12 12l8-4.5" />
+                            <path d="M12 12v9" />
+                            <path d="M12 12L4 7.5" />
+                        </svg>
+                    </span>
+                    <span class="text-lg font-bold tracking-tight">PixelCraft</span>
+                </a>
+                <p class="mt-4 max-w-sm text-sm leading-relaxed text-slate-600">
+                    Studio desain web &amp; UI/UX yang membantu bisnis tampil beda di dunia digital melalui desain yang
+                    fungsional dan memukau.
+                </p>
+                <div class="mt-5 flex gap-3">
+                    <a href="#" aria-label="Instagram"
+                        class="grid h-9 w-9 place-items-center rounded-lg border border-slate-200 text-slate-500 transition hover:border-brand-300 hover:text-brand-600">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="3" width="18" height="18" rx="5" />
+                            <circle cx="12" cy="12" r="4" />
+                            <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" />
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="LinkedIn"
+                        class="grid h-9 w-9 place-items-center rounded-lg border border-slate-200 text-slate-500 transition hover:border-brand-300 hover:text-brand-600">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.22 8.1h4.56V23H.22V8.1zM8.3 8.1h4.37v2.03h.06c.61-1.15 2.1-2.37 4.32-2.37 4.62 0 5.48 3.04 5.48 6.99V23h-4.56v-7.3c0-1.74-.03-3.98-2.42-3.98-2.42 0-2.79 1.89-2.79 3.85V23H8.3V8.1z" />
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="Dribbble"
+                        class="grid h-9 w-9 place-items-center rounded-lg border border-slate-200 text-slate-500 transition hover:border-brand-300 hover:text-brand-600">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="9" />
+                            <path
+                                d="M5 8.5c4.5 1.5 9.5 1.5 13.5-1M8.5 3.8c2.5 3.2 4.5 7 5.5 16M3.5 13.5c4-1 9 .5 13 4.5" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="text-sm font-bold">Layanan</h3>
+                <ul class="mt-4 space-y-2.5 text-sm text-slate-600">
+                    <li><a href="#layanan" class="transition hover:text-brand-600">UI/UX Design</a></li>
+                    <li><a href="#layanan" class="transition hover:text-brand-600">Web Design</a></li>
+                    <li><a href="#layanan" class="transition hover:text-brand-600">Branding</a></li>
+                    <li><a href="#layanan" class="transition hover:text-brand-600">Development</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="text-sm font-bold">Perusahaan</h3>
+                <ul class="mt-4 space-y-2.5 text-sm text-slate-600">
+                    <li><a href="#proses" class="transition hover:text-brand-600">Tentang Kami</a></li>
+                    <li><a href="#portofolio" class="transition hover:text-brand-600">Portofolio</a></li>
+                    <li><a href="#harga" class="transition hover:text-brand-600">Harga</a></li>
+                    <li><a href="#kontak" class="transition hover:text-brand-600">Kontak</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="border-t border-slate-100">
+            <div
+                class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-4 py-6 text-xs text-slate-500 sm:flex-row sm:px-6 lg:px-8">
+                <p>© <span id="year"></span> PixelCraft. All rights reserved.</p>
+                <div class="flex gap-5">
+                    <a href="#" class="transition hover:text-brand-600">Privacy Policy</a>
+                    <a href="#" class="transition hover:text-brand-600">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ================= SCRIPT ================= -->
+    <script>
+        // Mobile menu
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const iconOpen = document.getElementById('iconOpen');
+        const iconClose = document.getElementById('iconClose');
+
+        menuBtn.addEventListener('click', () => {
+            const isOpen = !mobileMenu.classList.contains('hidden');
+            mobileMenu.classList.toggle('hidden');
+            iconOpen.classList.toggle('hidden', !isOpen ? false : true);
+            iconClose.classList.toggle('hidden', !isOpen ? true : false);
+            menuBtn.setAttribute('aria-expanded', String(!isOpen));
+        });
+
+        // Tutup menu setelah klik link
+        mobileMenu.querySelectorAll('a').forEach((link) => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                iconOpen.classList.remove('hidden');
+                iconClose.classList.add('hidden');
+                menuBtn.setAttribute('aria-expanded', 'false');
+            });
+        });
+
+        // Year
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>
